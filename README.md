@@ -4,6 +4,14 @@
 
 - Add task data and display tasks on the screen
 
+## WorkFlow
+
+Write down features/tasks to complete.
+Create a branch on git
+Implement a feauture
+Write down tests for it
+Commit to github
+
 ## Stories
 
 - As a developer I want to view all of my tasks that need to be completed
