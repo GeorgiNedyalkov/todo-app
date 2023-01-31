@@ -22,11 +22,12 @@ Commit to github
 ## Acceptance Criteria:
 
 - A developer can:
-  - See all tasks
-  - Add a task
-  - Edit a task
-  - Delete a task
-  - Mark complete
+
+  - [x] See all tasks
+  - [] Add a task
+  - [] Edit a task
+  - [] Delete a task
+  - [x] Mark complete
 
 ## Definition of done:
 

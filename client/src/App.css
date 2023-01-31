@@ -26,11 +26,35 @@ p, a, li, ul, ol, textarea {
   font-size: 1rem;
 }
 
+input {
+  font-family: inherit;
+  outline: none;
+  padding: 5px;
+  font-size: 1rem;
+  color: #fefefe;
+  background-color: var(--bg-color-grey);
+  border: 0.5px solid white;
+}
+
+input:focus {
+  border: 0.5px solid white;
+}
+
 .task {
   display: flex;
+  align-items: center;
+  /* border: 1px solid white; */
+  width: 500px;
   gap: 10px;
 }
 
 .task__list {
   margin: 0 auto;
+}
+
+.btn {
+  background-color: black;
+  padding: 0.5rem;
+  color: #fefefe;
+  cursor: pointer;
 }
