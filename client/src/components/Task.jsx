@@ -26,7 +26,7 @@ const Task = ({ task, onChange, onDelete }) => {
     taskContent = (
       <>
         {task.taskText}
-        <button className="btn" onClick={() => setIsEditing(true)}>
+        <button className="btn edit" onClick={() => setIsEditing(true)}>
           Edit
         </button>
       </>
@@ -36,7 +36,9 @@ const Task = ({ task, onChange, onDelete }) => {
   return (
     <div className="task">
       <input
-        className="task__checkbox"
+        className={
+          task.completed === true ? "task__checkbox" : "task__checkbox-checked"
+        }
         type="checkbox"
         checked={task.completed}
         onChange={(e) => {
@@ -47,7 +49,7 @@ const Task = ({ task, onChange, onDelete }) => {
         }}
       />
       {taskContent}
-      <button className="btn" onClick={() => onDelete(task.id)}>
+      <button className="btn delete" onClick={() => onDelete(task.id)}>
         Delete
       </button>
     </div>

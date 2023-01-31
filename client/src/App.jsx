@@ -41,6 +41,7 @@ function App() {
       <h1 className="title">Task App</h1>
 
       <AddTask onAddTask={handleAddTask} />
+
       <TaskList
         tasks={tasks}
         onChangeTask={handleChangeTask}

@@ -5,4 +5,118 @@
 
   /* colors */
   --bg-color-grey: #151515;
+  --bg-color-green: rgb(92, 185, 92);
+  --bg-color-yellow: rgb(185, 183, 92);
+  --bg-color-red: rgb(227, 109, 109);
 }
+
+#root {
+  max-width: 1080px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+
+li {
+  list-style-type: none;
+}
+
+p, a, li, ul, ol, textarea {
+  font-size: 1rem;
+}
+
+input {
+  font-family: inherit;
+  outline: none;
+  padding: 5px;
+  font-size: 1rem;
+  color: #fefefe;
+  background-color: var(--bg-color-grey);
+  border: 0.5px solid white;
+  margin-right: 0.5rem;
+}
+
+input[type="text"] {
+  width: 20vw;
+}
+
+input:focus {
+  border: 0.5px solid white;
+}
+
+button:hover {
+  border: 2px solid white;
+}
+
+.btn.delete:hover {
+  border-color: var(--bg-color-red);
+}
+
+.btn.edit:hover {
+  border-color: var(--bg-color-yellow);
+}
+
+.description {
+  margin: 10px;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  /* border: 1px solid white; */
+  width: 500px;
+  gap: 10px;
+  /* background-color: brown; */
+  /* border: 1px solid yellow; */
+  margin: 5px auto;
+}
+
+.task__list {
+  margin: 0 auto;
+  /* background-color: green; */
+}
+
+.btn {
+  background-color: black;
+  padding: 0.5rem;
+  color: #fefefe;
+  cursor: pointer;
+}
+
+.btn.delete:hover {
+  border: 1px solid var(--bg-color-red);
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  position: relative;
+}
+
+input[type="checkbox"]:checked {
+  background-color: green;
+  display: inline-block;
+  border: none;
+}
+
+input[type="checkbox"]:checked:after{
+  content: '✔';
+  position: absolute;
+  top: 0px;
+}
+
