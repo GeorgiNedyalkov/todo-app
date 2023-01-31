@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "../App.css";
 
-const Task = ({ task, onChange }) => {
+const Task = ({ task, onChange, onDelete }) => {
   const [isEditting, setIsEditing] = useState(false);
   let taskContent;
 
@@ -47,6 +47,9 @@ const Task = ({ task, onChange }) => {
         }}
       />
       {taskContent}
+      <button className="btn" onClick={() => onDelete(task.id)}>
+        Delete
+      </button>
     </div>
   );
 };

@@ -34,10 +34,19 @@ input {
   color: #fefefe;
   background-color: var(--bg-color-grey);
   border: 0.5px solid white;
+  margin-right: 0.5rem;
+}
+
+input[type="text"] {
+  width: 20vw;
 }
 
 input:focus {
   border: 0.5px solid white;
+}
+
+.description {
+  margin: 10px;
 }
 
 .task {
@@ -58,3 +67,4 @@ input:focus {
   color: #fefefe;
   cursor: pointer;
 }
+
