@@ -39,7 +39,6 @@ function App() {
   return (
     <div className="App">
       <h1 className="title">Task App</h1>
-      <p className="description">Here are your tasks:</p>
 
       <AddTask onAddTask={handleAddTask} />
       <TaskList
