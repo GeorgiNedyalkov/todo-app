@@ -1,28 +1,41 @@
 import { useState } from "react";
+import { initialTasks } from "./data/initialTasks";
 import "./App.css";
 
 function App() {
   const [tasks, setTasks] = useState(initialTasks);
 
+  function handleChangeTask(task) {
+    setTasks(
+      tasks.map((t) => {
+        if (t.id === task.id) {
+          return task;
+        } else {
+          return t;
+        }
+      })
+    );
+  }
+
   return (
     <div className="App">
       <h1 className="title">Task App</h1>
       <p>Here are your tasks:</p>
-      {/* Tasklist */}
-      <TaskList tasks={tasks} />
+
+      <TaskList tasks={tasks} onChangeTask={handleChangeTask} />
     </div>
   );
 }
 
 export default App;
 
-export const TaskList = ({ tasks }) => {
+export const TaskList = ({ tasks, onChangeTask }) => {
   return (
     <ul className="task__list">
       {tasks.map((task) => {
         return (
           <li key={task.id}>
-            <Task taskText={task.taskText} completed={task.completed} />
+            <Task task={task} onChange={onChangeTask} />
           </li>
         );
       })}
@@ -30,17 +43,21 @@ export const TaskList = ({ tasks }) => {
   );
 };
 
-export const Task = ({ taskText, completed }) => {
+export const Task = ({ task, onChange }) => {
   return (
     <div className="task">
-      <input className="task__checkbox" type="checkbox" checked={completed} />
-      <p className="task__text">{taskText}</p>
+      <input
+        className="task__checkbox"
+        type="checkbox"
+        checked={task.completed}
+        onChange={(e) => {
+          onChange({
+            ...task,
+            completed: e.target.checked,
+          });
+        }}
+      />
+      <p className="task__text">{task.taskText}</p>
     </div>
   );
 };
-
-const initialTasks = [
-  { id: 1, taskText: "Create a Task component", completed: false },
-  { id: 2, taskText: "Create a Task List component", completed: false },
-  { id: 3, taskText: "Create an Add Task component", completed: true },
-];
