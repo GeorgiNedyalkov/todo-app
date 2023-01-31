@@ -1,5 +1,5 @@
 #root {
-  width: 1080px;
+  max-width: 1080px;
   margin: 0 auto;
   text-align: center;
 }
@@ -16,4 +16,21 @@ h1 {
   font-size: 2.5rem;
   margin-top: 10px;
   margin-bottom: 50px;
+}
+
+li {
+  list-style-type: none;
+}
+
+p, a, li, ul, ol, textarea {
+  font-size: 1rem;
+}
+
+.task {
+  display: flex;
+  gap: 10px;
+}
+
+.task__list {
+  margin: 0 auto;
 }
